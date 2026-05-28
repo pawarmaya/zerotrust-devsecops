@@ -42,7 +42,9 @@ pipeline {
 
         stage('Deploy Container') {
             steps {
-                sh 'docker run -d -p 5000:5000 secure-app'
+		sh 'docker stop secure-container || true'
+		sh 'docker rm secure-conatiner || true'
+                sh 'docker run -d --name secure-container -p 5000:5000 secure-app'
             }
         }
 
