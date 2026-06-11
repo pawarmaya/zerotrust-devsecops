@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Zero Trust Dashboard</title>
+
+<link rel="stylesheet"
+href="/static/style.css">
+
+</head>
+
+<body>
+
+<h1>Zero Trust DevSecOps Dashboard</h1>
+
+<div class="card">
+
+<h2>Build Status</h2>
+
+<p>{{ build.status }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>Deployment</h2>
+
+<p>{{ deployment.status }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>SonarQube Results</h2>
+
+<p>Bugs : {{ sonar.bugs }}</p>
+
+<p>Vulnerabilities : {{ sonar.vulnerabilities }}</p>
+
+<p>Code Smells : {{ sonar.code_smells }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>Trivy Results</h2>
+
+<p>Critical : {{ trivy.critical }}</p>
+
+<p>High : {{ trivy.high }}</p>
+
+<p>Medium : {{ trivy.medium }}</p>
+
+</div>
+
+</body>
+
+</html>

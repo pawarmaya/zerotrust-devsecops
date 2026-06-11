@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zero Trust DevSecOps Platform</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            background:#0d1117;
+            color:white;
+        }
+
+        nav{
+            background:#161b22;
+            padding:20px;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        nav h2{
+            color:#58a6ff;
+        }
+
+        .hero{
+            text-align:center;
+            padding:100px 20px;
+        }
+
+        .hero h1{
+            font-size:50px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:22px;
+            color:#c9d1d9;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            padding:40px;
+        }
+
+        .card{
+            background:#161b22;
+            padding:25px;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h3{
+            color:#58a6ff;
+            margin-bottom:15px;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+            background:#161b22;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+    <h2>Zero Trust DevSecOps</h2>
+    <div>
+        Secure Cloud Deployment Platform
+    </div>
+</nav>
+
+<section class="hero">
+
+    <h1>Zero Trust DevSecOps Pipeline</h1>
+
+    <p>
+        Secure Cloud Application Deployment using
+        Jenkins, Docker, SonarQube, Trivy and GCP
+    </p>
+
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h3>CI/CD Automation</h3>
+        <p>
+            Automated build and deployment using Jenkins.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Code Security</h3>
+        <p>
+            SonarQube analyzes source code for vulnerabilities.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Container Security</h3>
+        <p>
+            Trivy scans Docker images before deployment.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Cloud Deployment</h3>
+        <p>
+            Application deployed securely on Google Cloud Platform.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>Master's Project</h3>
+
+    <p>
+        Design and Implementation of a Zero Trust DevSecOps Pipeline
+        for Secure Cloud Application Deployment
+    </p>
+
+</footer>
+
+</body>
+</html>
