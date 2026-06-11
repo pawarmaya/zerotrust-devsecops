@@ -17,10 +17,9 @@ def load_json(file_path):
 def dashboard():
 
     sonar = load_json("reports/sonar.json")
-    trivy = load_json("reports/trivy.json")
+    trivy =load_json("reports/trivy.json")
     build = load_json("reports/build.json")
-    deployment = load_json("reports/deployment.json")
-
+    deployment = load_json("reports/deployment.json") 
     return render_template(
         "index.html",
         sonar=sonar,
@@ -50,3 +49,24 @@ def get_sonar_metrics():
     )
 
     return response.json()
+def parse_trivy_report(path):
+    import json
+
+    result = {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+    }
+
+    with open(path) as f:
+        data = json.load(f)
+
+    for item in data.get("Results", []):
+        for vuln in item.get("Vulnerabilities", []):
+            severity = vuln.get("Severity", "").lower()
+
+            if severity in result:
+                result[severity] += 1
+
+    return result
