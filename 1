@@ -18,12 +18,9 @@ pipeline {
     steps {
         echo 'Running SonarQube Analysis...'
         
+        error('Quality Gate Failed - Blocking Deployment')
     }
-stage('Quality Gate') {
-    steps {
-        error('Quality Gate Failed')
-    }
-}}
+}
         stage('Build Docker Image.!!') {
             steps {
                 sh 'docker build -t secure-app ./app'
