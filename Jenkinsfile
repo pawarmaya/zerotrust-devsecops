@@ -17,14 +17,14 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    sh 'echo Running SonarQube Analysis...!!'
+                    sh 'echo Running SonarQube Analysis.!!'
                 }
             }
         }
 
         stage('Dependency Verification') {
             steps {
-                sh 'echo Verifying Dependencies..!!'
+                sh 'echo Verifying Dependencies'
             }
         }
 
