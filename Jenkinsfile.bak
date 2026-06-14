@@ -15,18 +15,16 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-            steps {
-                echo 'Running SonarQube Analysis...'
-            }
-        }
-
-        stage('Quality Gate') {
-            steps {
-                error('Quality Gate Failed - Security Issue Detected')
-            }
-        }
-
-        stage('Build Docker Image') {
+    steps {
+        echo 'Running SonarQube Analysis...'
+        
+    }
+stage('Quality Gate') {
+    steps {
+        error('Quality Gate Failed')
+    }
+}}
+        stage('Build Docker Image.!!') {
             steps {
                 sh 'docker build -t secure-app ./app'
             }
@@ -40,20 +38,11 @@ pipeline {
 
         stage('Deploy Container') {
             steps {
-                sh 'docker stop secure-container || true'
-                sh 'docker rm -f secure-container || true'
+		sh 'docker stop secure-container || true'
+		sh 'docker rm secure-conatiner || true'
                 sh 'docker run -d --name secure-container -p 5000:5000 secure-app'
             }
         }
-    }
 
-    post {
-        success {
-            echo 'Pipeline Completed Successfully'
-        }
-
-        failure {
-            echo 'Pipeline Failed Due To Quality Gate Validation'
-        }
     }
 }
