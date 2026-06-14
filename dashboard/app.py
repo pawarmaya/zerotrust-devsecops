@@ -1,7 +1,8 @@
 from flask import Flask, render_template
 import json
 import os
-
+admin_username = "admin"
+admin_password = "Admin@123"
 app = Flask(__name__)
 
 def load_json(file_path):
