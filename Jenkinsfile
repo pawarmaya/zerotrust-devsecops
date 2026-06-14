@@ -24,7 +24,7 @@ pipeline {
 
         stage('Dependency Verification') {
             steps {
-                sh 'echo Verifying Dependencies..!!!'
+                sh 'echo Verifying Dependencies..!!'
             }
         }
 
