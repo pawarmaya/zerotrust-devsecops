@@ -21,8 +21,10 @@ pipeline {
         }
 
         stage('Quality Gate') {
-            steps {
-                error('Quality Gate Failed - Security Issue Detected')
+            steps {steps {
+             timeout(time: 2, unit: 'MINUTES') {
+             waitForQualityGate abortPipeline: true
+        }             
             }
         }
 
