@@ -15,19 +15,14 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-            steps {
-                script {
-                    sh 'echo Running SonarQube Analysis.!!'
-                }
-            }
-        }
+    steps {
+        echo 'Running SonarQube Analysis...'
+        sh 'sonar-scanner'
 
-        stage('Dependency Verification') {
-            steps {
-                sh 'echo Verifying Dependencies'
-            }
-        }
-
+        // Demo: Force pipeline failure after Sonar scan
+        error('Quality Gate Failed - Blocking Deployment')
+    }
+}
         stage('Build Docker Image.!!') {
             steps {
                 sh 'docker build -t secure-app ./app'
